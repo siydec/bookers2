@@ -16,13 +16,13 @@
       <% if user_signed_in? %>
        <li>Home</li>
        <li>Users</li>
-       <li>Books</li>
+       <li><a href="/books">Books</a></li>
        <li>
         <%= link_to "Log out", destroy_user_session_path, method: :delete %>
        </li>
       <% else %>
-       <li>Home</li>
-       <li>About</li>
+       <li><a href="/">Home</a></li>
+       <li><%= link_to "About", about_path %></li>
        <li>
         <%= link_to "Sign up", new_user_registration_path %>
        </li>

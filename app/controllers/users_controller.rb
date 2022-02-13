@@ -17,6 +17,9 @@ class UsersController < ApplicationController
 
   end
 
+  def edit
+  end
+
   private
 
   def book_params

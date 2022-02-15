@@ -17,9 +17,18 @@ class BooksController < ApplicationController
   def index
     @books = Book.all
     @book = Book.new
+    @user = User.find(current_user[:id])
+    
+
+
   end
 
   private
+
+  def user_params
+    params.require(:user).permit(:name, :introduction, :profile_image)
+
+  end
 
   def book_params
     params.require(:book).permit(:title, :body)

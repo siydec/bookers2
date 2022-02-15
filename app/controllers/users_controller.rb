@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
    @book = Book.new
-   @user = User.find(current_user[:id])
+   @user = User.find(params[:id])
    @books = @user.books
 
   end
@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   end
 
   def index
+    @user = User.find(current_user[:id])
     @users = User.all
     @books = Book.all
 
@@ -25,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(current_user[:id])
+    @user = User.find(params[:id])
     @user.update(user_params)
     redirect_to about_path
   end

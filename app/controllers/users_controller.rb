@@ -18,8 +18,8 @@ class UsersController < ApplicationController
     @user = User.find(current_user[:id])
     @users = User.all
     @books = Book.all
+    @books = User.id
 
-  end
 
   def edit
     @user = User.find(params[:id])
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:title, :body)
+    params.require(:book).permit(:title, :body, :user_id)
   end
 
 

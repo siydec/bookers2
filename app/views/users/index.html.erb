@@ -33,19 +33,20 @@
        </div>
     </div>
     <div class="col-md-6">
-     <h2>Books</h2>
+     <h2>Users</h2>
      <table class="table">
        <thead>
          <tr>
-           <th>Title</th>
-           <th>Opinion</th>
+           <th>image</th>
+           <th>name</th>
          </tr>
        </thead>
        <tbody>
          <% @users.each do |user| %>
          <tr>
-           <td><%= image_tag @user.get_profile_image("100x100") %></td>
+           <td><%= image_tag user.get_profile_image("100x100") %></td>
            <td><%= user.name %></td>
+           <td><%= link_to "Show", controller:"users", action: "show", id: user %></td>
          </tr>
        </tbody>
          <% end %>

@@ -17,7 +17,7 @@
        <li>
          <%= link_to "Home", user_path(current_user.id) %>
        </li>
-       <li>Users</li>
+       <li><%= link_to "Users", controller:"users", action: "index" %></li>
        <li><a href="/books">Books</a></li>
        <li>
         <%= link_to "Log out", destroy_user_session_path, method: :delete %>

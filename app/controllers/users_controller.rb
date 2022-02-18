@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  def new
+    @book = Book.new
+  end
+
   def show
    @book = Book.new
    @user = User.find(params[:id])
@@ -11,10 +15,11 @@ class UsersController < ApplicationController
     @book = Book.new(book_params)
     @book.user_id = current_user.id
     @book.save
-    redirect_to about_path
+    redirect_to action: "show", id: @book
   end
 
   def index
+    @book = Book.new
     @user = User.find(current_user[:id])
     @users = User.all
     @books = Book.all

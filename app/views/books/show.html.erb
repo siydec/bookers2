@@ -1,9 +1,9 @@
 <h1>Books#show</h1>
 
-<%=  flash[:notice] %>
+<div class="text-success"><%= flash[:notice] %></div>
 <div class="container">
   <div class="row">
-   <%= render 'books/leftside' %>
+   <%= render partial: 'books/leftside', locals: {book: @book_new} %>
     <div class="col-md-6">
      <h2>Book detail</h2>
      <table class="table">

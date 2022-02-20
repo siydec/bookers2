@@ -1,9 +1,14 @@
-<h1>Books#index</h1>
-
-
 <div class="container">
+ <div class="text-danger">
+   <% if @book.errors.any? %>
+   <h3><%= @book.errors.count %>errors prohibited this obj from being saved:</h3>
+    <% @book.errors.full_messages.each do |message| %>
+    <ul><li><%= message %></li></ul>
+    <% end %>
+   <% end %>
+   </div>
   <div class="row">
-   <%= render 'leftside' %>
+   <%= render partial:'leftside', locals:{ book: @book} %>
     <div class="col-md-6">
      <h2>Books</h2>
      <table class="table">

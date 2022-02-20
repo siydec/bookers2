@@ -18,7 +18,7 @@
          <%= link_to "Home", user_path(current_user.id) %>
        </li>
        <li><%= link_to "Users", controller:"users", action: "index" %></li>
-       <li><a href="/books">Books</a></li>
+       <li><%= link_to "Books", controller:"books", action: "index" %></li>
        <li>
         <%= link_to "Log out", destroy_user_session_path, method: :delete %>
        </li>
@@ -33,6 +33,17 @@
        </li>
       <% end %>
     </header>
+    <main class="mb-auto">
     <%= yield %>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="mx-auto">
+            <p>CopyRight Infratop.inc</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

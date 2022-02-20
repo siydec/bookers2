@@ -3,41 +3,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-3">
-      <h2>User info</h2>
-      <table class="table">
-        <tbody>
-         <tr>
-           <th><%= image_tag @user.get_profile_image("100x100") %></th>
-           <th></th>
-         </tr>
-
-         <tr>
-           <th>name</th>
-           <th><%= @user.name %></th>
-         </tr>
-
-         <tr>
-           <th>introduction</th>
-           <th><%= @user.introduction %></th>
-         </tr>
-
-        </tbody>
-      </table>
-      <div class="row">
-        <%= link_to "Edit_test", controller:"users", action: "edit", id: @user %>
-      </div>
-      <div>
-       <h1>New book</h1>
-       <%= form_with model: @book, local: true do |f| %>
-        <h4>Title</h4>
-         <%= f.text_field :title %>
-        <h4>Opinion</h4>
-         <%= f.text_area :body %>
-         <%= f.submit 'Create book' %>
-       <% end %>
-       </div>
-    </div>
+   <%= render 'leftside' %>
     <div class="col-md-6">
      <h2>Books</h2>
      <table class="table">

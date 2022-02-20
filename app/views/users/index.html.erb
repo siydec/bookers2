@@ -1,37 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-3">
-      <h2>User info</h2>
-      <table class="table">
-        <tbody>
-         <tr>
-           <th><%= image_tag @user.get_profile_image("100x100") %></th>
-           <th></th>
-         </tr>
-
-         <tr>
-           <th>name</th>
-           <th><%= current_user.name %></th>
-         </tr>
-
-         <tr>
-           <th>introduction</th>
-           <th></th>
-         </tr>
-
-        </tbody>
-      </table>
-      <div>
-       <h1>New book</h1>
-       <%= form_with model: @book do |f| %>
-        <h4>Title</h4>
-         <%= f.text_field :title %>
-        <h4>Opinion</h4>
-         <%= f.text_area :body %>
-         <%= f.submit 'Create book' %>
-       <% end %>
-       </div>
-    </div>
+    <%= render 'books/leftside' %>
     <div class="col-md-6">
      <h2>Users</h2>
      <table class="table">

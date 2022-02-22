@@ -1,5 +1,3 @@
-<h1>edit_test</h1>
-
 <div class = "container">
 
   <div class = "row">
@@ -20,8 +18,11 @@
        <P><%= f.text_field :title, autofocus: true, id:"Title", placeholder: @book.title %></p>
        <label for="Body">Opinion</label>
        <p><%= f.text_area :body, autofocus: true, id:"Body", placeholder: @book.body %></p>
-       <%= f.submit"Update Book" %>
+       <%= f.submit"Update Book", class:"btn btn-success" %>
        <% end %>
+       <%= link_to "Show", controller:"books", action:"show", id: @book %>
+       |
+       <%= link_to "Back", books_path %>
     </div>
   </div>
 </div>

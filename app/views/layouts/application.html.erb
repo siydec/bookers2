@@ -24,10 +24,18 @@
          <p><span class="fa-solid fa-house-chimney"></span>Home</p>
          <% end %>
        </li>
-       <li><%= link_to "Users", controller:"users", action: "index" %></li>
-       <li><%= link_to "Books", controller:"books", action: "index" %></li>
+       <li><%= link_to users_path do %>
+         <p><span class="fa-solid fa-users"></span>Users</p>
+         <% end %>
+       </li>
        <li>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+         <%= link_to books_path do %></li>
+         <p><span class="fa-solid fa-book-open"></span>Books</p>
+         <% end %>
+       <li>
+        <%= link_to  destroy_user_session_path, method: :delete do %>
+        <p><span class="fa-solid fa-right-from-bracket"></span>Lpg out</p>
+        <% end %>
        </li>
       </ul>
       <% else %>

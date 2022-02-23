@@ -16,37 +16,51 @@
     <nav class="navber navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
       <a class="navbar-brand" href="/"><span>Bookers</span></a>
-      <div class="navbar-collapse collapse show">
+      <div class="navbar-collapse">
       <% if user_signed_in? %>
       <ul class="navbar-nav ml-auto">
-       <li>
+       <li class="px-1">
          <%= link_to user_path(current_user.id) do %>
          <p><span class="fa-solid fa-house-chimney"></span>Home</p>
          <% end %>
        </li>
-       <li><%= link_to users_path do %>
-         <p><span class="fa-solid fa-users"></span>Users</p>
+       <li class="px-1">
+         <%= link_to users_path do %>
+         <p><i class="fa-solid fa-users"></i>Users</p>
          <% end %>
        </li>
-       <li>
-         <%= link_to books_path do %></li>
+       <li class="px-1">
+         <%= link_to books_path do %>
          <p><span class="fa-solid fa-book-open"></span>Books</p>
          <% end %>
-       <li>
+       </li>
+       <li class="px-1">
         <%= link_to  destroy_user_session_path, method: :delete do %>
-        <p><span class="fa-solid fa-right-from-bracket"></span>Lpg out</p>
+        <p><span class="fa-solid fa-right-from-bracket"></span>Log out</p>
         <% end %>
        </li>
       </ul>
       <% else %>
-      <ul>
-       <li><a href="/">Home</a></li>
-       <li><%= link_to "About", about_path %></li>
-       <li>
-        <%= link_to "Sign up", new_user_registration_path %>
+      <ul class="navbar-nav ml-auto">
+       <li class="px-1">
+         <%= link_to root_path do %>
+         <p><span class="fa-solid fa-house-chimney"></span>Home</p>
+         <% end %>
        </li>
-       <li>
-        <%= link_to "Log in", new_user_session_path %>
+       <li class="px-1">
+         <%= link_to about_path do %>
+         <p><span class="fa-solid fa-link"></span>About</p>
+         <% end %>
+       </li>
+       <li class="px-1">
+        <%= link_to new_user_registration_path do %>
+        <p><span class="fa-solid fa-user-plus"></span>Sign up</p>
+        <% end %>
+       </li>
+       <li class="px-1">
+        <%= link_to new_user_session_path do %>
+        <p><span class="fa-solid fa-arrow-right-to-bracket"></span>Log in</p>
+        <% end %>
        </li>
       </ul>
       <% end %>

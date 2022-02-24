@@ -1,10 +1,10 @@
-<div class="text-success"><%= flash[:notice] %></div>
+<div class="text-success"><p><%= flash[:notice] %></p></div>
 <div class="container">
   <div class="row">
    <%= render partial: 'books/leftside', locals: {book: @book_new} %>
-    <div class="col-md-6">
+    <div class="col-md-8 offset-md-1">
      <h2>Book detail</h2>
-     <table class="table">
+     <table class="table table-hover table-inverse">
        <tbody>
          <tr>
            <td><%= link_to @book.user.name, controller:"users", action: "show", id: @book.user.id %>

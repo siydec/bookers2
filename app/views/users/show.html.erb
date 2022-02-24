@@ -1,8 +1,8 @@
-<div class="text-success"><%= flash[:notice] %></div>
+<div class="text-success"><p><%= flash[:notice] %></p></div>
 <div class="container px-5 px-sm-0">
   <div class="row">
    <%= render partial: 'books/leftside', locals: {book: @book} %>
-    <div class="col-md-8">
+    <div class="col-md-8 offset-md-1">
      <h2>Books</h2>
      <table class="table">
        <thead>
@@ -15,7 +15,7 @@
          <% @books.each do |book| %>
          <tr>
            <td><%= link_to controller:"users", action:"show", id: (book.user_id) do %>
-               <%= image_tag book.user.get_profile_image("100x100") %>
+               <%= image_tag book.user.get_profile_image("40x40") %>
                <% end %>
            </td>
            <td><%= link_to book.title, controller:"books", action: "show", id: book %></td>

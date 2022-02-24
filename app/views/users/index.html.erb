@@ -1,7 +1,8 @@
 <div class="container">
+  <p></p>
   <div class="row">
     <%= render partial: 'books/leftside', locals: {book: @book} %>
-    <div class="col-md-6">
+    <div class="col-md-8 offset-md-1">
      <h2>Users</h2>
      <table class="table">
        <thead>
@@ -13,7 +14,7 @@
        <tbody>
          <% @users.each do |user| %>
          <tr>
-           <td><%= image_tag user.get_profile_image("100x100") %></td>
+           <td><%= image_tag user.get_profile_image("40x40") %></td>
            <td><%= user.name %></td>
            <td><%= link_to "Show", controller:"users", action: "show", id: user %></td>
          </tr>
